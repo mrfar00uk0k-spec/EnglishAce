@@ -458,11 +458,21 @@ export default function Home() {
               94%
             </div>
             <div style={{ color:'rgba(255,255,255,0.5)', marginTop:8, marginBottom:'1.5rem', fontSize:'0.92rem' }}>Candidate Satisfaction Rate</div>
-            <Link to="/assessment" className="btn-primary" style={{
-              background:'linear-gradient(135deg,#2563eb,#0ea5e9)',
-              color:'#fff', borderRadius:11, padding:'12px 28px',
-              fontWeight:800, fontSize:'0.93rem', display:'inline-block',
-            }}>{t('hero_cta')}</Link>
+            <Link
+  to="/assessment"
+  className="btn-primary"
+  style={{
+    background:'linear-gradient(135deg,#2563eb,#0ea5e9)',
+    color:'#fff',
+    borderRadius:11,
+    padding:'12px 28px',
+    fontWeight:800,
+    fontSize: window.innerWidth <= 768 ? '0.8rem' : '0.93rem',
+    display:'inline-block',
+  }}
+>
+  {t('hero_cta')}
+</Link>
           </div>
         </div>
         <style>{`@media(max-width:700px){.why-inner{grid-template-columns:1fr !important}}`}</style>
