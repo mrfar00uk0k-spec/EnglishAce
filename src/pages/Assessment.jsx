@@ -102,7 +102,7 @@ export default function Assessment() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
                       {Icon && <Icon size={11} color={active ? color : done ? color : 'rgba(255,255,255,0.25)'} />}
                       <span style={{
-                        fontSize: fontSize: window.innerWidth <= 768 ? '0.5rem' : '0.65rem', fontWeight: 600,
+                        fontSize: window.innerWidth <= 768 ? '0.5rem' : '0.65rem', fontWeight: 600,
                         color: active ? color : done ? color + 'cc' : 'rgba(255,255,255,0.25)',
                       }}>{stepLabels[key]}</span>
                     </div>
