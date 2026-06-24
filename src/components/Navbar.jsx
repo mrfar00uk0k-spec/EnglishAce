@@ -62,8 +62,14 @@ export default function Navbar() {
 
           {/* Logo */}
           {/* Logo + Lexi badge side by side on the left */}
-          <div style={{ marginLeft: '-95px', display:'flex', alignItems:'center', gap:10 }}>
-            <Link to="/" onClick={(e) => handleNav(e, '/')} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+<div
+  style={{
+    marginLeft: window.innerWidth <= 768 ? '-20px' : '-95px',
+    display:'flex',
+    alignItems:'center',
+    gap:10
+  }}
+>            <Link to="/" onClick={(e) => handleNav(e, '/')} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
               <div style={{ width:50, height:50, borderRadius:10, overflow:'hidden', flexShrink:0, background:'#000000', display:'flex', alignItems:'center', justifyContent:'center' }}>
                 <img src="/logo2.png" alt="EnglishACE" style={{ height:'110%', marginTop:'-3%' }} onError={(e)=>{e.target.style.display='none'}}/>
               </div>
