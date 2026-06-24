@@ -228,6 +228,11 @@ export default function Navbar() {
     .nav-desktop{ display: flex !important; }
     .burger     { display: none !important; }
   }
+  @media (max-width: 768px) {
+  .logo-container {
+    margin-left: -30px !important;
+  }
+}
 
   @media (max-width: 899px) {
     .nav-desktop { display: none !important; }
