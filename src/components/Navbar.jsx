@@ -78,33 +78,41 @@ export default function Navbar() {
             </Link>
 
             {/* Lexi mini badge — left of navbar, next to site name */}
-            {location.pathname === '/' && (
-<div
-  style={{
-    position: 'absolute',
-    left: '200px',
-    top: '50%',
-    transform: 'translateY(-50%)',
+         {location.pathname === '/' && (
+  <div
+    className="hide-mobile"
+    style={{
+      position: 'absolute',
+      left: '200px',
+      top: '50%',
+      transform: 'translateY(-50%)',
 
-    display:'flex',
-    alignItems:'center',
-    gap:5,
+      display:'flex',
+      alignItems:'center',
+      gap:5,
 
-    background:'linear-gradient(135deg,rgba(14,165,233,0.12),rgba(99,102,241,0.1))',
-    border:'1px solid rgba(56,189,248,0.3)',
-    borderRadius:22,
-    padding:'6px 14px 6px 6px',
-    maxWidth:270,
-    zIndex:10
-  }}
->                <LexiNavFox />
-                <span style={{ color:'#93c5fd', fontSize:'0.72rem', fontWeight:700, lineHeight:1.3, maxWidth:240 }}>
-                  {greeting.text}
-                </span>
-              </div>
-            )}
-          </div>
-
+      background:'linear-gradient(135deg,rgba(14,165,233,0.12),rgba(99,102,241,0.1))',
+      border:'1px solid rgba(56,189,248,0.3)',
+      borderRadius:22,
+      padding:'6px 14px 6px 6px',
+      maxWidth:270,
+      zIndex:10
+    }}
+  >
+    <LexiNavFox />
+    <span
+      style={{
+        color:'#93c5fd',
+        fontSize:'0.72rem',
+        fontWeight:700,
+        lineHeight:1.3,
+        maxWidth:240
+      }}
+    >
+      {greeting.text}
+    </span>
+  </div>
+)}
           {/* Desktop Links */}
           <div className="nav-desktop" style={{ marginLeft: '50px',display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.6rem' }}>
             {links.map(l => (
