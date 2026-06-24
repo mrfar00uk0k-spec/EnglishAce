@@ -86,24 +86,41 @@ export default function Assessment() {
                 {currentSection + 1} / {SECTIONS.length - 1}
               </span>
             </div>
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-              {stepKeys.filter(k => k !== 'results').map((key, i) => {
+<div style={{
+  display: 'flex',
+  gap: 6,
+  flexWrap: 'nowrap',
+  overflowX: 'auto',
+  scrollbarWidth: 'none'
+}}>              {stepKeys.filter(k => k !== 'results').map((key, i) => {
                 const Icon = TestIconMap[key];
                 const color = TestColorMap[key];
                 const done = i < currentSection;
                 const active = i === currentSection;
                 return (
-                  <div key={key} style={{ flex: 1, minWidth: 50, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                    <div style={{
+<div
+  key={key}
+  style={{
+    flex: '0 0 auto',
+    minWidth: window.innerWidth <= 768 ? 60 : 90,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 4
+  }}
+>                    <div style={{
                       width: '100%', height: 3, borderRadius: 2,
                       background: done ? color : active ? color + '66' : 'rgba(255,255,255,0.08)',
                       transition: 'all 0.5s',
                     }} />
                     <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
                       {Icon && <Icon size={11} color={active ? color : done ? color : 'rgba(255,255,255,0.25)'} />}
-                      <span style={{
-                        fontSize: '0.65rem', fontWeight: 600,
-                        color: active ? color : done ? color + 'cc' : 'rgba(255,255,255,0.25)',
+                     <span style={{
+  fontSize: window.innerWidth <= 768 ? '0.55rem' : '0.65rem',
+  fontWeight: 600,
+  color: active ? color : done ? color + 'cc' : 'rgba(255,255,255,0.25)',
+  whiteSpace: 'nowrap',
+}}>
                       }}>{stepLabels[key]}</span>
                     </div>
                   </div>
