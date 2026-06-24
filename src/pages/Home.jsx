@@ -467,6 +467,7 @@ export default function Home() {
     borderRadius:11,
     padding:'12px 28px',
     fontWeight:800,
+    padding: window.innerWidth <= 768 ? '10px 20px' : '12px 28px',
     fontSize: window.innerWidth <= 768 ? '0.8rem' : '0.93rem',
     display:'inline-block',
   }}
