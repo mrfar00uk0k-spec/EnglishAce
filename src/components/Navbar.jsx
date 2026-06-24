@@ -113,6 +113,7 @@ export default function Navbar() {
     </span>
   </div>
 )}
+            </div>
           {/* Desktop Links */}
           <div className="nav-desktop" style={{ marginLeft: '50px',display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.6rem' }}>
             {links.map(l => (
