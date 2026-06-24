@@ -138,9 +138,9 @@ ${transcript}
 WORD COUNT: ${wordCount}
 
 SCORING GUIDANCE:
-- 1-20 words: scores must not exceed 25 overall
-- 21-40 words: scores must not exceed 45 overall
-- 41+ words: score based on quality; strong fluent answers can reach 70-90
+- 1-20 words: scores should usually stay between 20-40
+- 21-40 words: scores should usually stay between 35-60
+- 41+ words: score mainly based on quality and relevance; strong fluent answers can reach 70-90
 - Off-topic or incoherent: overall_score below 30 regardless of length
 - For mistakes: quote the exact phrase → explain the error → give corrected version
   Example: "I am work here → I work here (wrong verb form)"
@@ -186,8 +186,8 @@ function normalizeSpeakingResult(parsed, wordCount) {
   }
 
   if      (wordCount <= 5)  r.overall_score = 0
-  else if (wordCount <= 20) r.overall_score = Math.min(r.overall_score, 25)
-  else if (wordCount <= 40) r.overall_score = Math.min(r.overall_score, 45)
+  else if (wordCount <= 20) r.overall_score = Math.min(r.overall_score, 35)
+  else if (wordCount <= 40) r.overall_score = Math.min(r.overall_score, 55)
 
   r.overall_score         = clamp(Math.round(r.overall_score),         0, 100)
   r.professionalism_score = clamp(Math.round(r.professionalism_score), 0, 100)
@@ -344,9 +344,9 @@ function normalizeWritingResult(parsed, wordCount) {
   }
 
   if      (wordCount <= 10) r.overall_score = 0
-  else if (wordCount <= 20) r.overall_score = Math.min(r.overall_score, 18)
-  else if (wordCount <= 40) r.overall_score = Math.min(r.overall_score, 34)
-  else if (wordCount <= 70) r.overall_score = Math.min(r.overall_score, 55)
+  else if (wordCount <= 20) r.overall_score = Math.min(r.overall_score, 30)
+  else if (wordCount <= 40) r.overall_score = Math.min(r.overall_score, 50)
+  else if (wordCount <= 70) r.overall_score = Math.min(r.overall_score, 65)
 
   r.overall_score         = clamp(Math.round(r.overall_score),         0, 100)
   r.grammar_score         = clamp(Math.round(r.grammar_score),         0, 100)
@@ -531,9 +531,9 @@ function normalizeHRResult(parsed, wordCount) {
   }
 
   if      (wordCount <= 10) r.overall_score = 0
-  else if (wordCount <= 20) r.overall_score = Math.min(r.overall_score, 22)
-  else if (wordCount <= 40) r.overall_score = Math.min(r.overall_score, 40)
-  else if (wordCount <= 80) r.overall_score = Math.min(r.overall_score, 62)
+  else if (wordCount <= 20) r.overall_score = Math.min(r.overall_score, 35)
+  else if (wordCount <= 40) r.overall_score = Math.min(r.overall_score, 55)
+  else if (wordCount <= 80) r.overall_score = Math.min(r.overall_score, 72)
 
   r.overall_score         = clamp(Math.round(r.overall_score),         0, 100)
   r.professionalism_score = clamp(Math.round(r.professionalism_score), 0, 100)
