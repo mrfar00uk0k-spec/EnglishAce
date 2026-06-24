@@ -209,16 +209,30 @@ export default function Navbar() {
         )}
       </nav>
 
-      <style>{`
-        .nav-cta { display: none !important; }
-        .burger  { display: flex !important; }
-        @media (min-width: 900px) {
-          .nav-cta    { display: inline-block !important; }
-          .nav-desktop{ display: flex !important; }
-          .burger     { display: none !important; }
-        }
-        @media (max-width: 899px) { .nav-desktop { display: none !important; } }
-      `}</style>
+     <style>{`
+  .nav-cta { display: none !important; }
+  .burger  { display: flex !important; }
+
+  .hide-mobile {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .hide-mobile {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .nav-cta    { display: inline-block !important; }
+    .nav-desktop{ display: flex !important; }
+    .burger     { display: none !important; }
+  }
+
+  @media (max-width: 899px) {
+    .nav-desktop { display: none !important; }
+  }
+`}</style>
     </>
   )
 }
