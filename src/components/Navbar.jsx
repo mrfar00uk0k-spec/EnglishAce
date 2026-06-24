@@ -230,7 +230,7 @@ export default function Navbar() {
   }
   @media (max-width: 768px) {
   .logo-container {
-    margin-left: -30px !important;
+    margin-left: 0px !important;
   }
 }
 
