@@ -222,11 +222,16 @@ export default function HRInterview({ onFinish }) {
     }
 
     // SpeechRecognition — live display + fallback
-    const sr = buildSRFallback(
-      (partial) => setLiveText(partial),
-      (final)   => { srTextRef.current = final }
-    )
-    if (sr) { sr.start(); srRef.current = sr }
+   const sr = buildSRFallback(
+  (partial) => setLiveText(partial),
+  () => {}
+)
+
+// للعرض فقط
+if (sr) {
+  sr.start()
+  srRef.current = sr
+}
 
     // Timers
     timerRef.current = setInterval(() => setRecordSecs(s => s + 1), 1000)
@@ -282,9 +287,8 @@ export default function HRInterview({ onFinish }) {
       }
     }
     if (!transcript || transcript.length < 3) {
-      transcript = srTextRef.current
-      console.log(`[HR] SR fallback (${transcript.split(' ').length} words)`)
-    }
+  throw new Error('Could not transcribe audio')
+}
 
     // Evaluate
     setPhase('analyzing')
