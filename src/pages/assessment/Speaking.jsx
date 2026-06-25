@@ -211,8 +211,10 @@ export default function Speaking({ onFinish, isSingle }) {
     if (isSubmittedRef.current) return
     isSubmittedRef.current = true
 
-    if (!audioBlob || audioBlob.size <= 1000) {
-      setErrMsg('No speech detected. Please try speaking clearly into your microphone.')
+const hasRealAudio = audioBlob &&
+  audioBlob.size > 12000 &&
+  audioChunksRef.current.length >= 8
+if (hasRealAudio) {      setErrMsg('No speech detected. Please try speaking clearly into your microphone.')
       setPhase('unavailable')
       return
     }
