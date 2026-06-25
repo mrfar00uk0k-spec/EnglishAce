@@ -278,8 +278,10 @@ if (sr) {
 
     // Transcription — Whisper primary, SR fallback
     let transcript = ''
-    if (audioBlob && audioBlob.size > 1000) {
-      try {
+const hasRealAudio = audioBlob &&
+  audioBlob.size > 12000 &&
+  audioChunksRef.current.length >= 8
+if (hasRealAudio) {      try {
         transcript = await uploadAudioForTranscript(audioBlob)
         console.log(`[HR] Whisper transcript (${transcript.split(' ').length} words)`)
       } catch (e) {
