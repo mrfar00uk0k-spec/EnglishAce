@@ -307,22 +307,32 @@ if (sr) {
   }, [qIndex])
 
   // ── Next question ────────────────────────────────────────────────────────
-  const nextQuestion = () => {
-   
-  setFeedback(null); setLiveText(''); setIsReady(false); setErrMsg('')
   const MAX_RECORD_SECS = 120
-    const TOTAL_QUESTIONS = 10 
-      setQIndex(nextIdx)
-      setPhase('ready')
-    } else {
-      const avg = allScores.length > 0
-        ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length)
-        : 0
-      onFinish(avg)
-    }
-  }
+const TOTAL_QUESTIONS = 10
+  
+  const nextQuestion = () => {
+  setFeedback(null)
+  setLiveText('')
+  setIsReady(false)
+  setErrMsg('')
 
-  const progress   = (qIndex / TOTAL_QUESTIONS) * 100
+  const nextIdx = qIndex + 1
+
+  if (nextIdx < TOTAL_QUESTIONS && nextIdx < hrQuestions.length) {
+    setQIndex(nextIdx)
+    setPhase('ready')
+  } else {
+    const avg =
+      allScores.length > 0
+        ? Math.round(
+            allScores.reduce((a, b) => a + b, 0) / allScores.length
+          )
+        : 0
+
+    onFinish(avg)
+  }
+}
+  const progress = ((qIndex + 1) / TOTAL_QUESTIONS) * 100
   const scoreColor = v => v >= 70 ? '#22d3ee' : v >= 50 ? '#f59e0b' : '#f87171'
 
   return (
