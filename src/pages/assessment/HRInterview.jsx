@@ -309,8 +309,7 @@ if (sr) {
   // ── Next question ────────────────────────────────────────────────────────
   const nextQuestion = () => {
     setFeedback(null); setLiveText(''); setIsReady(false); setErrMsg('')
-    const nextIdx = qIndex + 1
-    if (nextIdx < hrQuestions.length) {
+   const TOTAL_QUESTIONS = 10 {
       setQIndex(nextIdx)
       setPhase('ready')
     } else {
@@ -321,7 +320,7 @@ if (sr) {
     }
   }
 
-  const progress   = (qIndex / hrQuestions.length) * 100
+  const progress   = (qIndex / TOTAL_QUESTIONS) * 100
   const scoreColor = v => v >= 70 ? '#22d3ee' : v >= 50 ? '#f59e0b' : '#f87171'
 
   return (
@@ -344,7 +343,7 @@ if (sr) {
       {/* Progress */}
       <div style={{ marginBottom: '2rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)' }}>
-          <span>{t('hr_question')} {qIndex + 1} {t('hr_of')} {hrQuestions.length}</span>
+          <span>{t('hr_question')} {qIndex + 1} {t('hr_of')} {TOTAL_QUESTIONS}</span>
           <span>{Math.round(progress)}%</span>
         </div>
         <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 4, height: 6 }}>
@@ -548,7 +547,7 @@ if (sr) {
 
           <div style={{ textAlign: 'center' }}>
             <button onClick={nextQuestion} style={{ background: 'linear-gradient(135deg,#1d4ed8,#2563eb)', color: '#fff', border: 'none', borderRadius: 12, padding: '13px 32px', fontSize: '0.95rem', fontWeight: 700, cursor: 'pointer', boxShadow: '0 4px 16px rgba(37,99,235,0.4)' }}>
-              {qIndex < hrQuestions.length - 1 ? t('hr_next') + ' →' : t('hr_finish') + ' →'}
+              {qIndex < TOTAL_QUESTIONS - 1 ? t('hr_next') + ' →' : t('hr_finish') + ' →'}
             </button>
           </div>
         </div>
