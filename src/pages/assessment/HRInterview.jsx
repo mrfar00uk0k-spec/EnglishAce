@@ -308,8 +308,10 @@ if (sr) {
 
   // ── Next question ────────────────────────────────────────────────────────
   const nextQuestion = () => {
-    setFeedback(null); setLiveText(''); setIsReady(false); setErrMsg('')
-   const TOTAL_QUESTIONS = 10 {
+   
+  setFeedback(null); setLiveText(''); setIsReady(false); setErrMsg('')
+  const MAX_RECORD_SECS = 120
+    const TOTAL_QUESTIONS = 10 
       setQIndex(nextIdx)
       setPhase('ready')
     } else {
