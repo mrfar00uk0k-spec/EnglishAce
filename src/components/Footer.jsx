@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 style={{ color: '#fff', fontWeight: 600, marginBottom: '0.75rem', fontSize: '0.9rem' }}>Contact</h4>
-            <a href="mailto:mr.far0.0uk.@gmail.com" style={{ display:'block', color:'rgba(255,255,255,0.42)', fontSize:'0.84rem', marginBottom:4 }}>mr.far0.0uk.@gmail.com</a>
+            <a href="https://www.facebook.com/just.L0000L" style={{ display:'block', color:'rgba(255,255,255,0.42)', fontSize:'0.84rem', marginBottom:4 }}>Facebook</a>
             <a href="https://wa.me/201272253531" target="_blank" rel="noreferrer" style={{ display:'block', color:'rgba(255,255,255,0.42)', fontSize:'0.84rem' }}>+20 127 225 3531</a>
           </div>
         </div>
