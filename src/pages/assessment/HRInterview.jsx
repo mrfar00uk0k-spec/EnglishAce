@@ -401,22 +401,22 @@ if (sr) {
             {Math.floor(recordSecs / 60).toString().padStart(2, '0')}:{(recordSecs % 60).toString().padStart(2, '0')}
             <span style={{ color: 'rgba(255,255,255,0.25)', marginLeft: 6 }}>/ {Math.floor(MAX_RECORD_SECS / 60).toString().padStart(2, '0')}:{(MAX_RECORD_SECS % 60).toString().padStart(2, '0')}</span>
           <button
-            onClick={handleStop}
-            disabled={!isReady}
-            style={{
-              background: isReady ? '#7c3aed' : 'rgba(124,58,237,0.3)',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 12,
-              padding: '12px 28px',
-              fontSize: '0.95rem',
-              fontWeight: 700,
-              cursor: isReady ? 'pointer' : 'not-allowed',
-              transition: 'all 0.4s',
-            }}
-          >
-            {isReady ? '⏹ ' + t('speak_stop') : '⏳ Getting ready...'}
-          </button>
+  onClick={handleStop}
+  disabled={!isReady}
+  style={{
+    background: 'linear-gradient(135deg,#dc2626,#ef4444)',
+    color: '#fff',
+    border: 'none',
+    borderRadius: 14,
+    padding: '14px 32px',
+    fontSize: '1rem',
+    fontWeight: 700,
+    cursor: 'pointer',
+    boxShadow: '0 6px 20px rgba(239,68,68,0.35)'
+  }}
+>
+  End Recording
+</button>
           
           </div>
 
