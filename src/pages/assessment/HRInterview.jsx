@@ -400,6 +400,24 @@ if (sr) {
           <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', marginBottom: '1rem' }}>
             {Math.floor(recordSecs / 60).toString().padStart(2, '0')}:{(recordSecs % 60).toString().padStart(2, '0')}
             <span style={{ color: 'rgba(255,255,255,0.25)', marginLeft: 6 }}>/ {Math.floor(MAX_RECORD_SECS / 60).toString().padStart(2, '0')}:{(MAX_RECORD_SECS % 60).toString().padStart(2, '0')}</span>
+          <button
+  onClick={handleStop}
+  disabled={!isReady}
+  style={{
+    background: 'linear-gradient(135deg,#dc2626,#ef4444)',
+    color: '#fff',
+    border: 'none',
+    borderRadius: 14,
+    padding: '14px 32px',
+    fontSize: '1rem',
+    fontWeight: 700,
+    cursor: 'pointer',
+    boxShadow: '0 6px 20px rgba(239,68,68,0.35)'
+  }}
+>
+  End Recording
+</button>
+          
           </div>
 
           {/* Waveform */}
