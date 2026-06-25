@@ -175,7 +175,7 @@ export default function HRInterview({ onFinish }) {
       mediaStreamRef.current.getTracks().forEach(t => t.stop())
       mediaStreamRef.current = null
     }
-  }
+  
 
   // ── Countdown ───────────────────────────────────────────────────────────
   const startCountdown = () => {
