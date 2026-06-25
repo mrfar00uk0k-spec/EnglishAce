@@ -409,17 +409,6 @@ if (sr) {
             ))}
           </div>
 
-          {/* Live transcript */}
-          <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: '1rem', margin: '0.75rem 0 1.25rem', minHeight: 60, textAlign: 'left', color: liveText ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.3)', fontSize: '0.9rem', lineHeight: 1.6, maxHeight: 130, overflowY: 'auto' }}>
-            {liveText || (isReady ? '🎤 Speak now — your words will appear here...' : '⏳ Initializing microphone...')}
-          </div>
-
-          <button onClick={handleStop} disabled={!isReady} style={{ background: isReady ? '#1d4ed8' : 'rgba(37,99,235,0.3)', color: '#fff', border: 'none', borderRadius: 12, padding: '12px 28px', fontSize: '0.95rem', fontWeight: 700, cursor: isReady ? 'pointer' : 'not-allowed', transition: 'all 0.4s' }}>
-            {isReady ? '⏹ ' + t('hr_stop') : '⏳ Getting ready...'}
-          </button>
-        </div>
-      )}
-
       {/* TRANSCRIBING */}
       {phase === 'transcribing' && (
         <LexiAnalyzing message="Processing your recording..." />
