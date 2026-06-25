@@ -400,6 +400,16 @@ if (sr) {
           <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', marginBottom: '1rem' }}>
             {Math.floor(recordSecs / 60).toString().padStart(2, '0')}:{(recordSecs % 60).toString().padStart(2, '0')}
             <span style={{ color: 'rgba(255,255,255,0.25)', marginLeft: 6 }}>/ {Math.floor(MAX_RECORD_SECS / 60).toString().padStart(2, '0')}:{(MAX_RECORD_SECS % 60).toString().padStart(2, '0')}</span>
+          
+          
+          </div>
+
+          {/* Waveform */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 4, margin: '0.75rem 0' }}>
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} style={{ width: 4, borderRadius: 2, background: isReady ? '#2563eb' : '#f59e0b', animation: isReady ? `wave 1s ease-in-out ${i * 0.08}s infinite alternate` : 'none', height: isReady ? 20 : 6, transition: 'height 0.3s' }} />
+            ))}
+          </div>
           <button
   onClick={handleStop}
   disabled={!isReady}
@@ -417,15 +427,6 @@ if (sr) {
 >
   End Recording
 </button>
-          
-          </div>
-
-          {/* Waveform */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 4, margin: '0.75rem 0' }}>
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} style={{ width: 4, borderRadius: 2, background: isReady ? '#2563eb' : '#f59e0b', animation: isReady ? `wave 1s ease-in-out ${i * 0.08}s infinite alternate` : 'none', height: isReady ? 20 : 6, transition: 'height 0.3s' }} />
-            ))}
-          </div>
 </div>
 )}
       {/* TRANSCRIBING */}
