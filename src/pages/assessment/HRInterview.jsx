@@ -408,7 +408,8 @@ if (sr) {
               <div key={i} style={{ width: 4, borderRadius: 2, background: isReady ? '#2563eb' : '#f59e0b', animation: isReady ? `wave 1s ease-in-out ${i * 0.08}s infinite alternate` : 'none', height: isReady ? 20 : 6, transition: 'height 0.3s' }} />
             ))}
           </div>
-
+</div>
+)}
       {/* TRANSCRIBING */}
       {phase === 'transcribing' && (
         <LexiAnalyzing message="Processing your recording..." />
