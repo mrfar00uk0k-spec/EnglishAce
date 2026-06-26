@@ -279,10 +279,17 @@ if (sr) {
     // Transcription — Whisper primary, SR fallback
     let transcript = ''
 const hasRealAudio = audioBlob &&
-  audioBlob.size > 12000 &&
-  audioChunksRef.current.length >= 8
-if (hasRealAudio) {      try {
-        transcript = await uploadAudioForTranscript(audioBlob)
+  audioBlob.size > 3000 &&
+  audioChunksRef.current.length >= 4
+
+if (!hasRealAudio) {
+  setErrMsg('No speech detected. Please try speaking clearly into your microphone.')
+  setPhase('unavailable')
+  return
+}
+
+try {
+  const transcript= await uploadAudioForTranscript(audioBlob)
         console.log(`[HR] Whisper transcript (${transcript.split(' ').length} words)`)
       } catch (e) {
         console.warn('[HR] Whisper failed, using SR fallback:', e.message)
