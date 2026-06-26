@@ -289,7 +289,7 @@ if (!hasRealAudio) {
 }
 
 try {
-  const transcript= await uploadAudioForTranscript(audioBlob)
+  const spokenText = await uploadAudioForTranscript(audioBlob)
         console.log(`[HR] Whisper transcript (${transcript.split(' ').length} words)`)
       } catch (e) {
         console.warn('[HR] Whisper failed, using SR fallback:', e.message)
