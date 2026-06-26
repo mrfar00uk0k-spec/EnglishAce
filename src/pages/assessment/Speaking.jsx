@@ -221,9 +221,6 @@ if (!hasRealAudio) {
   return
 }
 
-try {
-  const spokenText = await uploadAudioForTranscript(audioBlob)
-
     try {
       const spokenText = await uploadAudioForTranscript(audioBlob)
       if (!spokenText || spokenText.trim().split(/\s+/).filter(Boolean).length < 3) {
