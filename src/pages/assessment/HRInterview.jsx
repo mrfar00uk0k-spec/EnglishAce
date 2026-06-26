@@ -291,13 +291,15 @@ if (!hasRealAudio) {
 let transcript = ''
 try {
   transcript = await uploadAudioForTranscript(audioBlob)
+  console.log(`[HR] Whisper transcript (${transcript.split(' ').length} words)`)
 } catch (e) {
   console.warn('[HR] Whisper failed:', e.message)
 }
+
 if (!transcript || transcript.length < 3) {
-  throw new Error('Could not transcribe audio')
-}
-  throw new Error('Could not transcribe audio')
+  setErrMsg('Could not transcribe audio. Please speak clearly and try again.')
+  setPhase('unavailable')
+  return
 }
 
     // Evaluate
