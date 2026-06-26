@@ -288,14 +288,15 @@ if (!hasRealAudio) {
   return
 }
 
+let transcript = ''
 try {
-  const spokenText = await uploadAudioForTranscript(audioBlob)
-        console.log(`[HR] Whisper transcript (${transcript.split(' ').length} words)`)
-      } catch (e) {
-        console.warn('[HR] Whisper failed, using SR fallback:', e.message)
-      }
-    }
-    if (!transcript || transcript.length < 3) {
+  transcript = await uploadAudioForTranscript(audioBlob)
+} catch (e) {
+  console.warn('[HR] Whisper failed:', e.message)
+}
+if (!transcript || transcript.length < 3) {
+  throw new Error('Could not transcribe audio')
+}
   throw new Error('Could not transcribe audio')
 }
 
@@ -316,7 +317,7 @@ try {
   }, [qIndex])
 
   // ── Next question ────────────────────────────────────────────────────────
-  const MAX_RECORD_SECS = 120
+ 
 const TOTAL_QUESTIONS = 10
   
   const nextQuestion = () => {
