@@ -212,12 +212,17 @@ export default function Speaking({ onFinish, isSingle }) {
     isSubmittedRef.current = true
 
 const hasRealAudio = audioBlob &&
-  audioBlob.size > 12000 &&
-  audioChunksRef.current.length >= 8
-if (hasRealAudio) {      setErrMsg('No speech detected. Please try speaking clearly into your microphone.')
-      setPhase('unavailable')
-      return
-    }
+  audioBlob.size > 3000 &&
+  audioChunksRef.current.length >= 4
+
+if (!hasRealAudio) {
+  setErrMsg('No speech detected. Please try speaking clearly into your microphone.')
+  setPhase('unavailable')
+  return
+}
+
+try {
+  const spokenText = await uploadAudioForTranscript(audioBlob)
 
     try {
       const spokenText = await uploadAudioForTranscript(audioBlob)
