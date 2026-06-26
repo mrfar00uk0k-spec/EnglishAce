@@ -277,7 +277,7 @@ if (sr) {
     isSubmittedRef.current = true
 
     // Transcription — Whisper primary, SR fallback
-    let transcript = ''
+   
 const hasRealAudio = audioBlob &&
   audioBlob.size > 3000 &&
   audioChunksRef.current.length >= 4
