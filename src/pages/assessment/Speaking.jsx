@@ -212,7 +212,7 @@ export default function Speaking({ onFinish, isSingle }) {
     isSubmittedRef.current = true
 
 const hasRealAudio = audioBlob &&
-  audioBlob.size > 1500 &&
+  audioBlob.size > 2500 &&
   audioChunksRef.current.length >= 4
 
 if (!hasRealAudio) {
