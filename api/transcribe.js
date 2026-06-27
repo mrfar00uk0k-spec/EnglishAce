@@ -103,14 +103,17 @@ function buildWhisperFormData(audioBuffer, filename, mimeType, boundary) {
     `Content-Type: ${mimeType}\r\n\r\n`
   )
   const modelPart = Buffer.from(
-    `\r\n--${boundary}\r\n` +
-    `Content-Disposition: form-data; name="model"\r\n\r\n` +
-    `whisper-large-v3-turbo` +
-    `\r\n--${boundary}\r\n` +
-    `Content-Disposition: form-data; name="response_format"\r\n\r\n` +
-    `json` +
-    `\r\n--${boundary}--\r\n`
-  )
+  `\r\n--${boundary}\r\n` +
+  `Content-Disposition: form-data; name="model"\r\n\r\n` +
+  `whisper-large-v3-turbo` +
+  `\r\n--${boundary}\r\n` +
+  `Content-Disposition: form-data; name="language"\r\n\r\n` +
+  `en` +
+  `\r\n--${boundary}\r\n` +
+  `Content-Disposition: form-data; name="response_format"\r\n\r\n` +
+  `json` +
+  `\r\n--${boundary}--\r\n`
+)
   return Buffer.concat([fileHeader, audioBuffer, modelPart])
 }
 
