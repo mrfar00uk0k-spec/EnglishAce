@@ -1,20 +1,4 @@
 {
-  "functions": {
-    "api/chat.js": {
-      "memory": 128,
-      "maxDuration": 20
-    },
-    "api/transcribe.js": {
-      "memory": 256,
-      "maxDuration": 30
-    }
-  },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!api/.*).*)", "destination": "/index.html" }
-  ]
-}
-{
   "headers": [
     {
       "source": "/(.*)",
@@ -33,5 +17,23 @@
         }
       ]
     }
+  ]
+}
+
+
+{
+  "functions": {
+    "api/chat.js": {
+      "memory": 128,
+      "maxDuration": 20
+    },
+    "api/transcribe.js": {
+      "memory": 256,
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/((?!api/.*).*)", "destination": "/index.html" }
   ]
 }
