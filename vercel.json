@@ -1,4 +1,15 @@
 {
+  "functions": {
+    "api/chat.js": {
+      "memory": 128,
+      "maxDuration": 20
+    },
+    "api/transcribe.js": {
+      "memory": 256,
+      "maxDuration": 30
+    }
+  },
+
   "headers": [
     {
       "source": "/(.*)",
@@ -14,26 +25,36 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), geolocation=(), payment=(), usb=(), magnetometer=(), accelerometer=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
-  ]
-},
+  ],
 
-
-{
-  "functions": {
-    "api/chat.js": {
-      "memory": 128,
-      "maxDuration": 20
-    },
-    "api/transcribe.js": {
-      "memory": 256,
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!api/.*).*)", "destination": "/index.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
   ]
 }
