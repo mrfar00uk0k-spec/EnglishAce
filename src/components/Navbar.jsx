@@ -75,7 +75,7 @@ export default function Navbar() {
         transition: 'background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease',
         padding: '0 1.5rem',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns:'270px 1fr auto', alignItems: 'center', height: 66, paddingLeft: '1.25rem', paddingRight: '1.25rem', gap: '0' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns:'300px 1fr auto', alignItems: 'center', height: 66, paddingLeft: '1.25rem', paddingRight: '1.25rem', gap: '0' }}>
 
           {/* Logo */}
           {/* Logo + Lexi badge side by side on the left */}
