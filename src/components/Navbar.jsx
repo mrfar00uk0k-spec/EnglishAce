@@ -85,7 +85,6 @@ export default function Navbar() {
     display:'flex',
     alignItems:'center',
     gap:10,
-    ...(lang === 'ar' ? { marginRight: 14 } : {}),
   }}
 >            <Link to="/" onClick={(e) => handleNav(e, '/')} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
               <div style={{ width:50, height:50, borderRadius:10, overflow:'hidden', flexShrink:0, background:'#000000', display:'flex', alignItems:'center', justifyContent:'center' }}>
