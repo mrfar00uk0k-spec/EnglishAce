@@ -102,26 +102,19 @@ export default function Navbar() {
             </Link>
 
             {/* Lexi mini badge — sits next to the site name, mirrored for RTL so it never overlaps the nav controls */}
-         {location.pathname === '/' && (
+         {location.pathname === '/' && lang === 'en' && (
   <div
     className="hide-mobile"
     style={{
-      position: 'absolute',
-      ...(isRTL ? { right: '200px' } : { left: '200px' }),
-      top: '50%',
-      transform: 'translateY(-50%)',
-
       display:'flex',
-      flexDirection: isRTL ? 'row-reverse' : 'row',
       alignItems:'center',
       gap:5,
-
-      background:'linear-gradient(135deg,rgba(14,165,233,0.12),rgba(99,102,241,0.1))',
-      border:'1px solid rgba(56,189,248,0.3)',
+      background:'linear-gradient(135deg,rgba(14,165,233,.12),rgba(99,102,241,.1))',
+      border:'1px solid rgba(56,189,248,.3)',
       borderRadius:22,
-      padding: isRTL ? '6px 6px 6px 14px' : '6px 14px 6px 6px',
-      maxWidth:270,
-      zIndex:10
+      padding:'6px 12px',
+      marginLeft:15,
+      maxWidth:250
     }}
   >
     <LexiNavFox />
