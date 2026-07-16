@@ -102,37 +102,37 @@ export default function Navbar() {
             </Link>
 
             {/* Lexi mini badge — sits next to the site name, mirrored for RTL so it never overlaps the nav controls */}
-         {location.pathname === '/' && lang === 'en' && (
+{location.pathname === '/' && (
   <div
     className="hide-mobile"
     style={{
-      display:'flex',
-      alignItems:'center',
-      gap:5,
-      background:'linear-gradient(135deg,rgba(14,165,233,.12),rgba(99,102,241,.1))',
-      border:'1px solid rgba(56,189,248,.3)',
-      borderRadius:22,
-      padding:'6px 12px',
-      marginLeft:15,
-      maxWidth:250
+      display: 'flex',
+      visibility: lang === 'en' ? 'visible' : 'hidden',
+      alignItems: 'center',
+      gap: 5,
+      background: 'linear-gradient(135deg,rgba(14,165,233,.12),rgba(99,102,241,.1))',
+      border: '1px solid rgba(56,189,248,.3)',
+      borderRadius: 22,
+      padding: '6px 12px',
+      marginLeft: 15,
+      maxWidth: 250
     }}
   >
     <LexiNavFox />
     <span
       dir="ltr"
       style={{
-        color:'#93c5fd',
-        fontSize:'0.72rem',
-        fontWeight:700,
-        lineHeight:1.3,
-        maxWidth:240
+        color: '#93c5fd',
+        fontSize: '0.72rem',
+        fontWeight: 700,
+        lineHeight: 1.3,
+        maxWidth: 240
       }}
     >
       {greeting.text}
     </span>
   </div>
-)}
-            </div>
+)}            </div>
           {/* Desktop Links */}
           <div className="nav-desktop" style={{ marginLeft: '50px',display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.6rem',marginLeft: '-150px', }}>
             {links.map(l => (
