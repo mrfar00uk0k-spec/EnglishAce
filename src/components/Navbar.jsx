@@ -134,7 +134,7 @@ export default function Navbar() {
 )}
             </div>
           {/* Desktop Links */}
-          <div className="nav-desktop" style={{ marginLeft: '50px',display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.6rem',marginLeft: '-40px', }}>
+          <div className="nav-desktop" style={{ marginLeft: '50px',display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.6rem',marginLeft: '-80px', }}>
             {links.map(l => (
               <a
                 key={l.to}
