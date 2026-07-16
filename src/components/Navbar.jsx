@@ -151,7 +151,7 @@ export default function Navbar() {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '1.6rem',
-marginLeft: lang === 'en' ? '180px' : '-120px',  }}
+marginLeft: lang === 'ar' ? '180px' : '-120px',  }}
 >            {links.map(l => (
               <a
                 key={l.to}
