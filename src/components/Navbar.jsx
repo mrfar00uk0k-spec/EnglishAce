@@ -101,12 +101,12 @@ export default function Navbar() {
             </Link>
 
             {/* Lexi mini badge — sits next to the site name, mirrored for RTL so it never overlaps the nav controls */}
-  {location.pathname === '/' && (
+{location.pathname === '/' && (
   <div
     className="hide-mobile"
     style={{
       display: 'flex',
-  visibility: location.pathname === '/' ? 'visible' : 'hidden',
+      visibility: lang === 'en' ? 'visible' : 'hidden',
       alignItems: 'center',
       gap: 5,
       background: 'linear-gradient(135deg,rgba(14,165,233,.12),rgba(99,102,241,.1))',
