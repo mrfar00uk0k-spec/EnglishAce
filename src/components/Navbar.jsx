@@ -140,7 +140,7 @@ export default function Navbar() {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '1.6rem',
-    marginLeft: lang === 'ar' ? '150px' : '-150px',
+    marginLeft: lang === 'ar' ? '150px' : '-200px',
   }}
 >            {links.map(l => (
               <a
