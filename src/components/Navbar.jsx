@@ -141,6 +141,7 @@ export default function Navbar() {
     justifyContent: 'center',
     gap: '1.6rem',
     marginLeft: lang === 'ar' ? '150px' : '-150px',
+    width: '100%',
   }}
 >            {links.map(l => (
               <a
