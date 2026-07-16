@@ -75,8 +75,19 @@ export default function Navbar() {
         transition: 'background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease',
         padding: '0 1.5rem',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns:'320px 1fr auto', alignItems: 'center', height: 66, paddingLeft: '1.25rem', paddingRight: '1.25rem', gap: '0' }}>
-
+<div
+  style={{
+    maxWidth: 1200,
+    margin: '0 auto',
+    display: 'grid',
+    gridTemplateColumns: '320px 1fr 240px',
+    alignItems: 'center',
+    height: 66,
+    paddingLeft: '1.25rem',
+    paddingRight: '1.25rem',
+    gap: 0,
+  }}
+>
           {/* Logo */}
           {/* Logo + Lexi badge side by side on the left */}
 <div
@@ -178,16 +189,24 @@ export default function Navbar() {
               transition: 'all 0.25s', letterSpacing: '0.02em',
             }}>{lang === 'en' ? 'عربي' : 'EN'}</button>
 
-            {!isTestPage && (
-              <a href="/assessment" onClick={(e) => handleNav(e, '/assessment')}
-                className="nav-cta btn-primary"
-                style={{
-                  background: 'linear-gradient(135deg,#2563eb,#0ea5e9)',
-                  color: '#fff', borderRadius: 10, padding: '8px 18px',
-                  fontSize: '0.87rem', fontWeight: 700,
-                  boxShadow: '0 4px 16px rgba(37,99,235,0.45)',
-                }}>{t('nav_start')} →</a>
-            )}
+            <a
+  href="/assessment"
+  onClick={(e) => handleNav(e, '/assessment')}
+  className="nav-cta btn-primary"
+  style={{
+    background: 'linear-gradient(135deg,#2563eb,#0ea5e9)',
+    color: '#fff',
+    borderRadius: 10,
+    padding: '8px 18px',
+    fontSize: '0.87rem',
+    fontWeight: 700,
+    boxShadow: '0 4px 16px rgba(37,99,235,0.45)',
+    visibility: isTestPage ? 'hidden' : 'visible',
+  }}
+>
+  {t('nav_start')} →
+</a>
+            
 
             {/* Burger */}
             <button onClick={() => setMenuOpen(!menuOpen)} className="burger" style={{
